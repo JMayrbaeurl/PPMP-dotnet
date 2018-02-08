@@ -1,0 +1,23 @@
+﻿{
+  "content-spec": "urn:spec://eclipse.org/unide/measurement-message#v2",
+  "device": {
+    "deviceID": "a4927dad-58d4-4580-b460-79cefd56775b"
+  },
+  "measurements": [
+    {
+      "ts": "2018-02-08T19:16:35.843Z",
+      "series": {
+        "$_time": [
+          0,
+          23,
+          24
+        ],
+        "temperature": [
+          45.4231,
+          46.4222,
+          44.2432
+        ]
+      }
+    }
+  ]
+}

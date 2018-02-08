@@ -1,0 +1,34 @@
+﻿{
+  "content-spec": "urn:spec://eclipse.org/unide/machine-message#v2",
+  "device": {
+    "deviceID": "a4927dad-58d4-4580-b460-79cefd56775b",
+    "operationalStatus": "normal",
+    "metaData": {
+      "swVersion": "2.0.3.13",
+      "swBuildID": "41535"
+    }
+  },
+  "messages": [
+    {
+      "origin": "sensor-id-992.2393.22",
+      "ts": "2018-02-08T17:29:51.120Z",
+      "type": "DEVICE",
+      "severity": "HIGH",
+      "code": "190ABT",
+      "title": "control board damaged",
+      "description": "Electronic control board or its electrical connections are damaged",
+      "hint": "Check the control board",
+      "metaData": {
+        "firmware": "20130304_22.020"
+      }
+    },
+    {
+      "ts": "2018-02-08T17:29:51.220Z",
+      "type": "TECHNICAL_INFO",
+      "severity": "HIGH",
+      "code": "33-02",
+      "title": "Disk size limit reached",
+      "description": "Disk size has reached limit. Unable to write log files."
+    }
+  ]
+}
