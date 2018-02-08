@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 using Microsoft.IoT.PPMP.Machine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
