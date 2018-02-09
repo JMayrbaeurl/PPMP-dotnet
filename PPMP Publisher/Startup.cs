@@ -17,10 +17,10 @@ namespace PPMP_Publisher
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            string connString = Configuration.GetSection("IoT Hub Connection").GetValue<string>("Connectionstring");
 
+            string connString = this.GetConnectionStringFromConfiguration();
             if (String.IsNullOrEmpty(connString))
-                ;
+                throw new InvalidOperationException("Missing configuration for IoT Hub connection");
             else
                 IoTHubConnection.Initialize(connString);
         }
@@ -58,6 +58,20 @@ namespace PPMP_Publisher
             });
 
             app.UseMvc();
+        }
+
+        private string GetConnectionStringFromConfiguration()
+        {
+            string connStringFromEnv = Environment.GetEnvironmentVariable("PPMPPublisher_IOTHUBConnection");
+            if (String.IsNullOrEmpty(connStringFromEnv))
+            {
+                string connString = Configuration["IoT Hub Connection"];
+                return connString;
+            }
+            else
+            {
+                return connStringFromEnv;
+            }
         }
     }
 }
