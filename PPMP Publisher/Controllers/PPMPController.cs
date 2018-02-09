@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 namespace PPMP_Publisher.Controllers
 {
 
-    public class PPMPController : Controller
+    public class PPMPController : AbstractPPMPController
     {
         [HttpPost("/rest/v2/message")]
         public void Post([FromBody]MessagePayload message)
@@ -48,38 +48,5 @@ namespace PPMP_Publisher.Controllers
             return new string[] { "Welcome message", "PPMP REST server" };
         }
 
-        private void PublishToIoTHub(object messageobject)
-        {
-            this.PublishToIoTHub(messageobject, JsonConvert.SerializeObject(messageobject));
-        }
-
-        private void PublishToIoTHub(object messageobject, string json)
-        {
-            Microsoft.Azure.Devices.Client.Message msg = this.CreateMessage(json);
-
-            if (msg != null)
-            {
-                msg.Properties.Add("payloadformat", "ppmp");
-                msg.Properties.Add("payloadformatversion", "v2");
-
-                if (messageobject is DeviceMessage)
-                    msg.Properties.Add("deviceID", this.GetDeviceIDFromMessage(messageobject));
-
-                IoTHubConnection.client.SendEventAsync(msg);
-            }
-        }
-
-        protected Microsoft.Azure.Devices.Client.Message CreateMessage(string json)
-        {
-            Microsoft.Azure.Devices.Client.Message msg = 
-                new Microsoft.Azure.Devices.Client.Message(Encoding.ASCII.GetBytes(json));
-
-            return msg;
-        }
-
-        private string GetDeviceIDFromMessage(object msgObject)
-        {
-            return (msgObject as DeviceMessage).DeviceID();
-        }
     }
 }
