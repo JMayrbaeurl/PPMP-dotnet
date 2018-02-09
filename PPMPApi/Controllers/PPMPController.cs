@@ -14,9 +14,20 @@ namespace PPMPApi.Controllers
     public class PPMPController : Controller
     {
         [HttpPost("/rest/v2/message")]
-        public void Post([FromBody]MessagePayload message)
+        public IActionResult Post([FromBody]MessagePayload message)
         {
-            Console.WriteLine(message);
+            if (message != null)
+            {
+                FluentValidation.Results.ValidationResult result =
+                    new MessagePayloadValidator().Validate(message);
+
+                if (result.IsValid)
+                    return Ok();
+                else
+                    return BadRequest(result);
+            }
+            else
+                return BadRequest("Invalid message format used");
         }
 
         [HttpPost("/rest/v2/measurement")]
