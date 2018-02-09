@@ -12,7 +12,7 @@ namespace Microsoft.IoT.PPMP.Measurement
 {
     public enum MeasurementResult { OK, NOK, UNKNOWN }
 
-    public sealed class MeasurementPayload
+    public sealed class MeasurementPayload : DeviceMessage
     {
         [JsonProperty(PropertyName = "content-spec")]
         public string Contentspec { get; set; }
@@ -25,6 +25,11 @@ namespace Microsoft.IoT.PPMP.Measurement
 
         [JsonProperty(PropertyName = "measurements", Required = Required.Always)]
         public List<Measurement> Measurements { get; set; }
+
+        public string DeviceID()
+        {
+            return this.Device != null ? this.Device.DeviceID : null;
+        }
     }
 
     public sealed class Part

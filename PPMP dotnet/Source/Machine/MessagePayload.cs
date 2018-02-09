@@ -45,7 +45,7 @@ namespace Microsoft.IoT.PPMP.Machine
         }
     }
 
-    public sealed class MessagePayload
+    public sealed class MessagePayload : DeviceMessage
     {
         public const string default_Contentspec = "urn:spec://eclipse.org/unide/measurement-message#v2";
 
@@ -60,6 +60,17 @@ namespace Microsoft.IoT.PPMP.Machine
         public MessagePayload()
         {
             this.Contentspec = default_Contentspec;
+            this.Messages = new List<Message>();
+        }
+
+        public MessagePayload(string deviceID) : this()
+        {
+            this.Device = new Device(deviceID);
+        }
+
+        public string DeviceID()
+        {
+            return this.Device != null ? this.Device.DeviceID : null;
         }
     }
 }

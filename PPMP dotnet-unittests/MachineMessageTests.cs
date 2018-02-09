@@ -65,5 +65,16 @@ namespace PPMP_dotnet_unittests
             MessagePayload msg = JsonConvert.DeserializeObject<MessagePayload>(File.ReadAllText(@".\Testfiles\simplemachinemessage.json"));
             Assert.AreEqual("a4927dad-58d4-4580-b460-79cefd56775b", msg.Device.DeviceID);
         }
+
+        [TestMethod] 
+        public void TestSimpleMachineMessageCreationWithFactory()
+        {
+            MessagePayload msg = new MessagePayloadFactory().CreateSimpleMessage(
+                "firstdevice001", "error001");
+
+            Assert.IsNotNull(msg);
+            Assert.AreEqual("firstdevice001", msg.DeviceID());
+            Assert.AreEqual("error001", msg.Messages[0].Code);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Microsoft.IoT.PPMP.Process
 
     public enum PartType { SINGLE, BATCH }
 
-    public sealed class ProcessPayload
+    public sealed class ProcessPayload : DeviceMessage
     {
         [JsonProperty(PropertyName = "content-spec")]
         public string Contentspec { get; set; }
@@ -22,6 +22,11 @@ namespace Microsoft.IoT.PPMP.Process
 
         [JsonProperty(PropertyName = "part", NullValueHandling = NullValueHandling.Ignore)]
         public Part Part { get; set; }
+
+        public string DeviceID()
+        {
+            return this.Device != null ? this.Device.DeviceID : null;
+        }
     }
 
     public sealed class Part

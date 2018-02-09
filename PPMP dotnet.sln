@@ -10,6 +10,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PPMP-dotnet-unittests", "PP
 		{2EDAEF7F-E3A7-42DA-B157-3C273EC15005} = {2EDAEF7F-E3A7-42DA-B157-3C273EC15005}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPMPApi", "PPMPApi\PPMPApi.csproj", "{6493106F-D1B6-4BCF-B6C5-510D9F9F3899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPMP Publisher", "PPMP Publisher\PPMP Publisher.csproj", "{4E4E1495-96CB-4AFF-AB27-BED9ACF9134B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,14 @@ Global
 		{3D2B5D72-1D16-42BA-A288-A844029D66FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2B5D72-1D16-42BA-A288-A844029D66FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2B5D72-1D16-42BA-A288-A844029D66FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6493106F-D1B6-4BCF-B6C5-510D9F9F3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6493106F-D1B6-4BCF-B6C5-510D9F9F3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6493106F-D1B6-4BCF-B6C5-510D9F9F3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6493106F-D1B6-4BCF-B6C5-510D9F9F3899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4E1495-96CB-4AFF-AB27-BED9ACF9134B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4E1495-96CB-4AFF-AB27-BED9ACF9134B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4E1495-96CB-4AFF-AB27-BED9ACF9134B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4E1495-96CB-4AFF-AB27-BED9ACF9134B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
