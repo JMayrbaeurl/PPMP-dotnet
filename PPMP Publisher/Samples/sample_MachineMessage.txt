@@ -1,0 +1,36 @@
+﻿Device: [ "ppmppublisher" ], Data: [
+  {
+    "content-spec": "urn:spec://eclipse.org/unide/machine-message#v2",
+    "device": {
+      "deviceID": "a4927dad-58d4-4580-b460-79cefd56775b",
+      "metaData": {
+        "swVersion": "2.0.3.13",
+        "swBuildID": "41535"
+      },
+      "operationalStatus": "normal"
+    },
+    "Messages": [
+      {
+        "code": "190ABT",
+        "description": "Electronic control board or its electrical connections are damaged",
+        "hint": "Check the control board",
+        "metaData": {
+          "firmware": "20130304_22.020"
+        },
+        "origin": "sensor-id-992.2393.22",
+        "severity": 0,
+        "title": "control board damaged",
+        "ts": "2018-02-08T17:29:51.12Z",
+        "type": 0
+      },
+      {
+        "code": "33-02",
+        "description": "Disk size has reached limit. Unable to write log files.",
+        "severity": 0,
+        "title": "Disk size limit reached",
+        "ts": "2018-02-08T17:29:51.22Z",
+        "type": 1
+      }
+    ]
+  }
+]Properties: 'payloadformat': 'ppmp' 'payloadformatversion': 'v2' 'deviceID': 'a4927dad-58d4-4580-b460-79cefd56775b'
